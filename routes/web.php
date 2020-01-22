@@ -56,3 +56,58 @@ route::get('pesan/{pesan}/{barang}',function($a,$b){
                 $b = 'dan pesan kopi hitam';
            }
 });
+
+route::get('pesan/{a?}/{b?}/{c?}' , function($makan = null , $minum = null , $harga = null)
+{
+
+    if (isset($makan)) {
+        $makan = "Anda memesan $makan";
+        echo $makan;
+    }
+    if (isset($minum)) {
+        $minum = " dan Minum<br>";
+        echo $minum;
+        echo"->25000 ukuran medium<br>";
+        echo"->35000 ukuran large<br>";
+        echo" <25000 ukuran small<br>";
+    }
+    if ($harga == 25000) {
+        echo "Anda memesan minuman dengan ukuran medium<br>";
+    }if ($harga == 35000) {
+        echo "Anda memesan minuman dengan ukuran large<br>";
+    }if ($harga < 25000) {
+        echo "Anda memesan minuman dengan ukuran small";
+    }
+});
+
+route::get('ss/{a?}/{b?}/{c?}' , function($nama=null , $bb = null , $umur = null)
+{
+    if ($nama == null) {
+        echo "Masukan Data dengan benar";
+    }
+    if ($bb == 76-100) {
+        echo "Anda Harus Menurunkan Berat Badan Anda";
+    }
+    if ($bb == 65-75) {
+        echo "Berat Badan Anda Ideal";
+    }
+    if ($bb == 50-64) {
+        echo "Berat Badan Anda Kurang";
+    }
+    if ($bb < 50) {
+        echo "Anda Kurang Nutrisi";
+    }
+    if ($umur == 30-40) {
+        echo "Perwira";
+    }
+    if ($umur == 40-50) {
+        echo "Laksamana";
+    }
+    if ($umur == 50-60) {
+        echo "Jendral";
+    }
+
+    echo "Nama : ".$nama;
+    echo "Berat Badan : ".$bb;
+    echo "Umur : ".$umur;
+});
