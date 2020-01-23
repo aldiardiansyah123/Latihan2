@@ -111,3 +111,38 @@ route::get('ss/{a?}/{b?}/{c?}' , function($nama=null , $bb = null , $umur = null
     echo "Berat Badan : ".$bb;
     echo "Umur : ".$umur;
 });
+
+Route::get('/testmodel1', function() {
+$query = App\post::all(); ;
+return $query;
+});
+Route::get('/testmodel2', function() {
+$query = App\post::find(1); ;
+return $query;
+});
+Route::get('/testmodel3', function() {
+$query = App\post::where('title','like','%cepat nikah%')->get(); ;
+return $query;
+});
+Route::get('/testmodel4', function() {
+$query = $post = App\post::find(1);
+$post->title = "Ciri Keluarga Sakinah";
+$post->save();
+return $post; ;
+return $query;
+});
+Route::get('/testmodel5', function() {
+$query = $post = App\post::find(1);
+$post->delete();
+// check data di databas ;
+return $query;
+});
+Route::get('/testmodel6', function() {
+$query = $post = new App\post;
+$post->title = "7 Amalan Pembuka Jodoh";
+$post->content = "shalat malam, sedekah, puasa sunah, silaturahmi, senyum, doa, tobat";
+$post->save();
+return $post;
+// check record baru di database ;
+return $query;
+});
