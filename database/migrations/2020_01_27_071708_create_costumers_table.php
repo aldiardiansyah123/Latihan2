@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Barang extends Migration
+class CreateCostumersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,15 @@ class Barang extends Migration
      */
     public function up()
     {
-        Schema::create('barang', function (Blueprint $table) {
+        Schema::create('costumers', function (Blueprint $table) {
             $table->bigIncrements('id');
-
+            $table->integer('code_costumer');
+            $table->string('nama');
+            $table->string('email');
+            $table->string('contry');
+            $table->text('city');
+            $table->string('address');
+            $table->string('Contact_Number');
             $table->timestamps();
         });
     }
@@ -27,6 +33,6 @@ class Barang extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('barang');
+        Schema::dropIfExists('costumers');
     }
 }
