@@ -146,3 +146,11 @@ return $post;
 // check record baru di database ;
 return $query;
 });
+route::get('Latihan2','LatihanController@hallo');
+
+route::get('tambah/{angka}/{angka1}','LatihanController@Pertambahan');
+route::get('kurang/{angka}/{angka1}','LatihanController@Pengurangan');
+route::get('bagi/{angka}/{angka1}','LatihanController@Pembagian');
+route::get('kali/{angka}/{angka1}','LatihanController@Perkalian');
+
+route::get('dd','LatihanController@loop');
