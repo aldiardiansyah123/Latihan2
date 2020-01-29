@@ -153,4 +153,7 @@ route::get('kurang/{angka}/{angka1}','LatihanController@Pengurangan');
 route::get('bagi/{angka}/{angka1}','LatihanController@Pembagian');
 route::get('kali/{angka}/{angka1}','LatihanController@Perkalian');
 
-route::get('dd','LatihanController@loop');
+route::get('dd','LatihanController@loop1');
+route::get('dd1','LatihanController@loop2');
+route::get('dd2','LatihanController@loop3');
+
