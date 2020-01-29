@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use \App\Tabungan;
+use App\Tabungan;
 
 class TabunganController extends Controller
 {
@@ -15,8 +15,8 @@ class TabunganController extends Controller
         $tabungan = Tabungan::find($id);
         return $tabungan;
     }
-    public function store($a=NULL,$b=NULL,$c=NULL,$d=NULL){
-        $tabungan = new Tabungan();
+    public function store($a = NULL,$b = NULL,$c = NULL,$d = NULL){
+        $tabungan = new Tabungan;
         $tabungan -> nis =$a;
         $tabungan -> nama =$b;
         $tabungan -> kelas =$c;
@@ -25,7 +25,7 @@ class TabunganController extends Controller
         return $tabungan;
     }
     public function Update($id=NULL,$a=NULL,$b=NULL,$c=NULL,$d=NULL){
-        $tabungan = new Tabungan($id);
+        $tabungan = Tabungan::find($id);
         $tabungan -> nis =$a;
         $tabungan -> nama =$b;
         $tabungan -> kelas =$c;
@@ -34,7 +34,7 @@ class TabunganController extends Controller
         return $tabungan;
     }
     public function Destroy($id=NULL){
-        $tabungan = new Tabungan($id);
+        $tabungan = Tabungan::find($id);
         $tabungan -> delete();
         return $tabungan;
     }

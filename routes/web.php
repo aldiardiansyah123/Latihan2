@@ -159,7 +159,7 @@ route::get('dd2','LatihanController@loop3');
 
 //crud tabungan
 route::get('tabungan','TabunganController@index');
-route::get('tabungan/{id}','TabunganController@show');
+route::get('tabungan/{id?}','TabunganController@show');
 route::get('tabungan-tambah/{$a?}/{$b?}/{$c?}/{$d?}','TabunganController@store');
 route::get('edit/{$id?}/{$a?}/{$b?}/{$c?}/{$d?}','TabunganController@Update');
 route::get('delete/{$id?}','TabunganController@Destroy');
