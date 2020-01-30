@@ -163,3 +163,7 @@ route::get('tabungan/{id?}','TabunganController@show');
 route::get('tabungan-tambah/{$a?}/{$b?}/{$c?}/{$d?}','TabunganController@store');
 route::get('edit/{$id?}/{$a?}/{$b?}/{$c?}/{$d?}','TabunganController@Update');
 route::get('delete/{$id?}','TabunganController@Destroy');
+
+//belajar practice
+route::get('pass','PracticeController@pass1');
+route::get('pass-tabungan','PracticeController@pass2');

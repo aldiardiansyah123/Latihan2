@@ -7,35 +7,43 @@ use App\Tabungan;
 
 class TabunganController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $tabungan = Tabungan::all();
         return $tabungan;
     }
-    public function show($id){
-        $tabungan = Tabungan::find($id);
+
+    public function show($id)
+    {
+        $tabungan = Tabungan::findOrFail($id);
         return $tabungan;
     }
-    public function store($a = NULL,$b = NULL,$c = NULL,$d = NULL){
-        $tabungan = new Tabungan;
-        $tabungan -> nis =$a;
-        $tabungan -> nama =$b;
-        $tabungan -> kelas =$c;
-        $tabungan -> jml = $d;
-        $tabungan -> save();
+
+    public function store($nis, $nama, $kelas, $jumlah)
+    {
+        $tabungan = new Tabungan();
+        $tabungan->nis = $nis;
+        $tabungan->nama = $nama;
+        $tabungan->kelas = $kelas;
+        $tabungan->jml = $jumlah;
+        $tabungan->save();
         return $tabungan;
     }
-    public function Update($id=NULL,$a=NULL,$b=NULL,$c=NULL,$d=NULL){
+    public function update($id, $nis, $nama, $kelas, $jumlah)
+    {
         $tabungan = Tabungan::find($id);
-        $tabungan -> nis =$a;
-        $tabungan -> nama =$b;
-        $tabungan -> kelas =$c;
-        $tabungan -> jml = $d;
-        $tabungan -> save();
+        $tabungan->nis = $nis;
+        $tabungan->nama = $nama;
+        $tabungan->kelas = $kelas;
+        $tabungan->jml = $jumlah;
+        $tabungan->save();
         return $tabungan;
     }
-    public function Destroy($id=NULL){
+
+    public function delete($id)
+    {
         $tabungan = Tabungan::find($id);
-        $tabungan -> delete();
+        $tabungan->delete();
         return $tabungan;
     }
 
