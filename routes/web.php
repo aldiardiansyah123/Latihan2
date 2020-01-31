@@ -165,5 +165,20 @@ route::get('edit/{$id?}/{$a?}/{$b?}/{$c?}/{$d?}','TabunganController@Update');
 route::get('delete/{$id?}','TabunganController@Destroy');
 
 //belajar practice
-route::get('pass','PracticeController@pass1');
+route::get('pass','PracticeController@Pass1');
+route::get('pass1','PracticeController@pass');
+
 route::get('pass-tabungan','PracticeController@pass2');
+
+//Latihan membikin controller
+route::get('index','BookController@index');
+
+
+
+
+// Artikel
+Route::get('artikel', 'ArtikelController@index');
+Route::get('artikel-create', 'ArtikelController@create');
+Route::get('artikel-show/{id}', 'ArtikelController@show');
+Route::get('artikel-edit/{id}/edit', 'ArtikelController@edit');
+Route::get('artikel-delete/{id}', 'ArtikelController@delete');

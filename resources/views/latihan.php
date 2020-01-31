@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    Hallo Nama saya <?php echo $data; ?>
+    Nama Saya Adalah <?= $data?>
 </body>
 </html>

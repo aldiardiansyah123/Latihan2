@@ -6,50 +6,101 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
-        $customer = Customer::all();
-        return $customer;
+        $tabungan = Customer::all();
+        return $tabungan;
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request,$a = 'default',$b = 'default',$c = 'default',$d = 'default',$e = 'default',$f = 'default',$g = 'default')
+    {
+        $tabungan = new Customer;
+        $tabungan->code = $a;
+        $tabungan->name = $b;
+        $tabungan->email = $c;
+        $tabungan->city = $d;
+        $tabungan->country = $e;
+        $tabungan->address = $f;
+        $tabungan->contact_number = $g;
+        $tabungan->save();
+        return $tabungan;
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
-        $customer = Customer::findOrFail($id);
-        return $customer;
+        $tabungan = Customer::find($id);
+        return $tabungan;
     }
 
-    public function store($code_customer, $name, $email, $country, $city, $address, $contact_number)
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
-        $customer = new Customer();
-        $customer->code_customer = $code_customer;
-        $customer->name = $name;
-        $customer->email = $email;
-        $customer->country = $country;
-        $customer->city = $city;
-        $customer->address = $address;
-        $customer->contact_number = $contact_number;
-        $customer->save();
-        return $customer;
+        //
     }
 
-    public function update($id, $code_customer, $name, $email, $country, $city, $address, $contact_number)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id,$a = 'default',$b = 'default',$c = 'default',$d = 'default',$e = 'default',$f = 'default',$g = 'default')
     {
-        $customer = Customer::find($id);
-        $customer->code_customer = $code_customer;
-        $customer->name = $name;
-        $customer->email = $email;
-        $customer->country = $country;
-        $customer->city = $city;
-        $customer->address = $address;
-        $customer->contact_number = $contact_number;
-        $customer->save();
-        return $customer;
+        $tabungan = Customer::find($id);
+        $tabungan->code = $a;
+        $tabungan->name = $b;
+        $tabungan->email = $c;
+        $tabungan->city = $d;
+        $tabungan->country = $e;
+        $tabungan->address = $f;
+        $tabungan->contact_number = $g;
+        $tabungan->save();
+        return $tabungan;
     }
 
-    public function delete($code_customer)
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
     {
-        $customer = Customer::find($code_customer);
-        $customer->delete();
-        return $customer;
+        $tabungan = Customer::find($id);
+        $tabungan->delete();
+        return $tabungan;
     }
 }
